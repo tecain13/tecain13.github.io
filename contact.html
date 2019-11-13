@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/aboutmestyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/contactstyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/portfoliostyle.css">
+    <style>
+        input[type=text],
+        select,
+        textarea {
+            margin-left: 150px;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 20px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            margin-left: 150px;
+        }
+
+        input[type=submit] {
+            background-color: #4aaaa5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: -215px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #4aaaa5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Index')">About Me</button>
+            <button class="tablinks" onclick="openTab(event, 'Contact')">Portfolio</button>
+            <button class="tablinks" onclick="openTab(event, 'Portfolio')">Contact</button>
+        </div>
+        <!-- Tab content -->
+        <div id="About Me" class="tabcontent">
+            <h3>About Me</h3>
+            <link rel="Index" href="portfolio/Index.html">
+        </div>
+
+        <div id="Portfolio" class="tabcontent">
+            <h3>Portfolio</h3>
+            <link rel="Portfolio" href="portfolio/portfolio.html">
+        </div>
+
+        <div id="Contact" class="tabcontent">
+            <h3>Contact</h3>
+            <link rel="Contact" href="portfolio/Contact.html">
+        </div>
+    </header>
+    <!--figure out how to make this interactive-->
+
+    <section id="nameheader">
+        <strong>Tyler Cain</strong>
+    </section>
+
+    <section id="full">
+        <div class=container>
+            <div id="contactheader">
+                <strong>Contact</strong></div>
+            <!--<div class="form">-->
+            <!--<figure class="form form-name"></figure>-->
+            Name<br>
+            <input type="text" name="name"><br>
+            <!--<figure class="form form-email"></figure>-->
+            Email<br>
+            <input type="text" name="email"><br>
+            <!--<figure class="form form-message"></figure>-->
+            Message<br>
+            <input type="text" name="message">
+            <br>
+            <input type="submit" value="Submit"><br>
+            <!--</form>-->
+        </div>
+    </section>
+
+    <footer>
+        Copyright &copy;
+    </footer>
+
+</body>
+
+</html>
