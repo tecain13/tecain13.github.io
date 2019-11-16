@@ -3,27 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>HTML/CSS Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/aboutmestyle.css">
     <link rel="stylesheet" type="text/css" href="assets/css/contactstyle.css">
     <link rel="stylesheet" type="text/css" href="assets/css/portfoliostyle.css">
+    <!--<nav>
+        <a href="tecain13.github.io/index.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>-->
 
 </head>
 
 <body>
     <header>
         <div class="tab">
-            <!--<a href="index.html">About Me</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>-->
-            <button class="tablinks" onclick="openTab(event, 'Index')">About Me</button>
+            <a href="index.html" style="margin-right:10px" style="font-family:Arial, Helvetica, sans-serif"
+                style="color: white;">About</a>
+            <a href="portfolio.html" style="margin-right:10px">Portfolio</a>
+            <a href="contact.html" style="margin-right:10px">Contact</a>
+            <!-- <button class="tablinks" onclick="openTab(event, 'Index')">About Me</button>
             <button class="tablinks" onclick="openTab(event, 'Contact')">Portfolio</button>
-            <button class="tablinks" onclick="openTab(event, 'Portfolio')">Contact</button>
+            <button class="tablinks" onclick="openTab(event, 'Portfolio')">Contact</button>-->
         </div>
-        <!-- Tab content -->
+        Tab content
         <div id="About Me" class="tabcontent">
-            <h3>About Me</h3>
-            <a href="index.html">About Me</a>>
+            <h3>About</h3>
+            <a href="index.html">About</a>>
         </div>
 
         <div id="Portfolio" class="tabcontent">
@@ -33,9 +40,10 @@
 
         <div id="Contact" class="tabcontent">
             <h3>Contact</h3>
-            <link rel="Contact" href="portfolio/Contact.html">
+            <link rel="Contact" href="portfolio/contact.html">
         </div>
     </header>
+    <!--nav tag aref-->
     <!--figure out how to make this interactive-->
 
     <section id="nameheader">
@@ -45,19 +53,34 @@
     <section id="full">
         <div class=container>
             <div id="aboutmeheader">
-                <strong>About Me</strong></div>
+                <strong>About Me</strong>
+            </div>
             <aside>
+                <!--make this an image, img src, create class in css?-->
             </aside>
-            <div id="biotext">
-                Breaking hearts since 1994. Born and raised in the 801. I'm a woman with a voracious appetite for
-                knowledge and learning. I believe in the power of public service (fully cognizant of its faults),
-                and would like to continue my career in government. I'm an aspiring data scientist with an academic
-                background in health policy, statistics, and GIS.<br>
-                <br />
-                To keep myself sane, I run, read (almost exclusively novels), write, volunteer, binge Nat Geo, and
-                eat more peanut butter than I care to admit. I will be able to die happily once I have a dog and an El
-                Camino. I'm here to take a bite out of life.<br>
-    </section>
+            <p id="biotext">
+                Born and raised in the 801. I'm a woman with a voracious appetite for
+                knowledge and learning, and I'm constantly looking for ways to maximize my existence.
+                <br>
+                <br>
+                I believe in
+                the power of public service (fully cognizant of its
+                faults),
+                and would like to continue my career in government. I'm an aspiring data scientist with an
+                academic
+                background in health policy, statistics, and GIS.</p>
+            <br>
+            <br>
+            <p id="biotext">
+                To keep myself sane, I run, read (almost exclusively novels), write, volunteer, binge Nat Geo,
+                and
+                eat more peanut butter than I care to admit. I will be able to die happily once I have a dog and
+                an
+                El
+                Camino. I'm here to take a bite out of life.
+            </p>
+            </p>
+        </div>
     </section>
 
     <footer>

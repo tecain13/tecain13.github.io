@@ -1,10 +1,18 @@
+/*nav{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #777777;
+}*/
+
 * {
     box-sizing: border-box;
     text-align: center;
   }
+
   
   body {
+    overflow: hidden;
   }
+  
   
   header {
     float: right;
@@ -16,10 +24,29 @@
     border-color: #cccccc;
     border-width: 8px;
   }
+
+  a{
+    color: gray;
+    background-color:white;
+    height: 15px;
+  }
   
+    a:link {
+      text-decoration: none;
+      background-color: white;
+      margin: 10px;
+      padding:10px;
+      padding-top: 10px;
+      color: #394539;
+      font-size: large;
+      height: 15px;
+  
+    }
+
   section {
     background-color: #394539 ;
     padding: 20px;
+    overflow: hidden;
   }
   
 
@@ -33,6 +60,7 @@
     color:white;
     font-family: 'Times New Roman', Times, serif;
     font-size: x-large;
+    font-weight: bold;
   }
     
   
@@ -41,6 +69,11 @@
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  margin-right: 250px;
+  margin-top: 30px;
+  
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -70,6 +103,7 @@
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  margin: 5px;
 }
 
 
@@ -77,7 +111,7 @@
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/hotel-wallpaper.png");
     widows: 100%;
     width: 100%;
-    height: 600px;
+    height: 400px;
     overflow: auto;
     clear: both;
     color: #777777;
@@ -85,12 +119,12 @@
   }
   
 .container{
-    margin-left: 50px;
     background-color: #ffffff;
-    width: 90%;
+    width: 95%;
     height: 300px;
     clear: both;   
     z-index: 600;
+    margin-left: 100px;
   }
 
 #aboutmeheader{
@@ -103,13 +137,14 @@
   border-bottom:3px solid #777777;
   z-index: 550;
   text-align: left;
+  font-weight: bold;
 }
 
   aside {
     float:left;
     width: 200px;
     height: 200px;
-    margin-top: 10px;
+    margin-top: 25px;
     background-image: url("https://pbs.twimg.com/profile_images/950565131670380545/kAjgxIux_400x400.jpg");
     background-size: 200px;
     border: 1px solid #eee;
@@ -119,14 +154,16 @@
   }
 
   #biotext {
+    margin-top: px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
     font-size: larger;
     letter-spacing: 1px;
     line-height: 35px;
     z-index: 400;
     padding: 10px;
-    overflow: auto;
+    overflow: hidden;
     word-wrap: normal;
   }
   
@@ -148,5 +185,5 @@
     content: " ";
     display: block;
     clear: both;
-  }
+  }`
   

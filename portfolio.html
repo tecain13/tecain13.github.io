@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio Tab</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/aboutmestyle.css">
     <link rel="stylesheet" type="text/css" href="assets/css/contactstyle.css">
     <link rel="stylesheet" type="text/css" href="assets/css/portfoliostyle.css">
@@ -14,25 +15,30 @@
     <body>
         <header>
             <div class="tab">
+                <a href="index.html" style="margin-right:10px" style="font-family:Arial, Helvetica, sans-serif"
+                    style="color: white;">About</a>
+                <a href="portfolio.html" style="margin-right:10px">Portfolio</a>
+                <a href="contact.html" style="margin-right:10px">Contact</a>
+                <!--
                 <button class="tablinks" onclick="openTab(event, 'Index')">About Me</button>
                 <button class="tablinks" onclick="openTab(event, 'Contact')">Portfolio</button>
                 <button class="tablinks" onclick="openTab(event, 'Portfolio')">Contact</button>
             </div>
-            <!-- Tab content -->
-            <div id="About Me" class="tabcontent">
-                <h3>About Me</h3>
-                <link rel="Index" href="portfolio/index.html">
-            </div>
+            Tab content -->
+                <div id="About" class="tabcontent">
+                    <h3>About</h3>
+                    <link rel="Index" href="portfolio/index.html">
+                </div>
 
-            <div id="Portfolio" class="tabcontent">
-                <h3>Portfolio</h3>
-                <link rel="Portfolio" href="portfolio/portfolio.html">
-            </div>
+                <div id="Portfolio" class="tabcontent">
+                    <h3>Portfolio</h3>
+                    <link rel="Portfolio" href="portfolio/portfolio.html">
+                </div>
 
-            <div id="Contact" class="tabcontent">
-                <h3>Contact</h3>
-                <link rel="Contact" href="portfolio/contact.html">
-            </div>
+                <div id="Contact" class="tabcontent">
+                    <h3>Contact</h3>
+                    <link rel="Contact" href="portfolio/contact.html">
+                </div>
         </header>
         <!--figure out how to make this interactive-->
 
