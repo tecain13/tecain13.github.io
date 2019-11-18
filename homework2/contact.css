@@ -1,0 +1,49 @@
+.navbar{
+    float: right !important;
+}
+
+.background{
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/hotel-wallpaper.png");
+}
+
+.badge{
+    font-size: x-large !important;
+    margin-left: 100px !important;
+    padding: 20px !important;
+}
+
+.badge:hover {
+    font-size: xx-large !important; 
+}
+
+.container{
+    margin-top: 10px !important;
+    width: 960px;
+    height: 670px !important;
+    overflow: hidden;
+}
+
+.col-lg-9{
+    height: 650px !important;
+}
+
+.card {
+    margin-top: 20px !important;
+}
+
+h4 {
+    font-size: 1.5rem;
+    height: 50px;
+    padding: 10px;
+    color: #52a6b6 !important;
+}
+
+.btn-primary:hover{
+    font-weight: bolder;
+
+}
+.footer-body{
+    height: 60px !important;
+    color: white;
+    border-top: 8px solid #4aaaa5 !important;
+}
