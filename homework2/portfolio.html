@@ -12,7 +12,7 @@
 <body>
     <!-- NavBar (copied and pasted from WC3) -->
     <!-- Static navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: right;">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,35 +45,36 @@
         </div>
     </div>
 
-    <div class=background>
+    <div class=background style="height: auto;">
         <div class=row>
-            <div class="container" style="height: 670px;">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9" style="background-color: whitesmoke;" style="height: 650px;">
+            <div class="container" style="height: auto;" style="width: 80%;" style="margin-bottom: 50px;">
+                <div class="row d-flex justify-content-center" style="margin: 10px;">
+                    <div class="col-lg-9" style="background-color: white;" style="height: 650px;">
 
                         <div class="card" style="font-family: Georgia, 'Times New Roman', Times, serif;"
                             style="font-weight: bolder;" style="color:#409daf;" style="border: 5px;"
                             style="border-bottom: grey;" style="margin-bottom: 10px;">
                             <div class=" header-body">
-                                <h4 class="header-body"><strong>Portfolio</strong> </h4>
+                                <h4 class="header-body" style="font-size: 1.5rem;" style="height: 50px;"
+                                    style="padding: 10px" style="color: #52a6b6;"><strong>Portfolio</strong> </h4>
                             </div>
                         </div>
 
                         <div class=row>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 13rem;">
+                            <div class="col-md-4 col-sm-2">
+                                <div class="card" style="width: 13rem;" style="margin-top:20px">
                                     <img src="https://m.media-amazon.com/images/I/51fHxTQAqPL._AA256_.jpg"
-                                        class="card-img-top" alt="ocean">
+                                        class="card-img-top" alt="ocean" style="height: 100px;">
                                     <div class="card-body" style="background-color:#409daf;">
                                         <p class="card-text" style="color: white;">Project 1</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="card" style="width: 13rem;">
+                            <div class="col-md-4 col-sm-2">
+                                <div class="card" style="width: 13rem;" style="margin-top:20px">
                                     <img src="https://i.pinimg.com/originals/bf/66/10/bf661044b1a01cfce9a3eaec3c50c339.jpg"
-                                        class="card-img-top" alt="pine trees">
+                                        class="card-img-top" alt="pine trees" style="height: 100px;">
                                     <div class="card-body" style="background-color:#409daf;">
                                         <p class="card-text" style="color: white;">Project 2</p>
                                     </div>
@@ -82,32 +83,33 @@
                         </div>
 
                         <div class=row>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 13rem;">
+                            <div class="col-md-4 col-sm-2">
+                                <div class="card" style="width: 13rem;" style="margin-top:20px">
                                     <img src="https://at-cdn-s01.audiotool.com/2014/10/16/documents/m1sGeUNiwspx4LWCXWJG6mGBcb4lf/0/cover256x256-f6d3c30bc1f24a6eaf944b01285f80fe.jpg"
-                                        class="card-img-top" alt="volcano">
+                                        class="card-img-top" alt="volcano" style="height: 100px;">
                                     <div class="card-body" style="background-color:#409daf;">
                                         <p class="card-text" style="color: white;">Project 3</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="card" style="width: 13rem;">
+                            <div class="col-md-4 col-sm-2">
+                                <div class="card" style="width: 13rem;" style="margin-top:20px">
                                     <img src="https://pbs.twimg.com/profile_images/697877099864936448/mRaiOw_I_400x400.jpg"
-                                        class="card-img-top" alt="ferns">
+                                        class="card-img-top" alt="ferns" style="height: 100px;">
                                     <div class="card-body" style="background-color:#409daf;">
-                                        <p class="card-text" style="color: white;">Project 4</p>
+                                        <p class="card-text" style="color: white;" style="margin-bottom: 10px;">Project
+                                            4</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class=row>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 13rem;">
+                            <div class="col-md-4 col-sm-2">
+                                <div class="card" style="width: 13rem;" style="margin-top:20px">
                                     <img src="https://cdn140.picsart.com/306739586285201.jpg?c256x256"
-                                        class="card-img-top" alt="astronaut">
+                                        class="card-img-top" alt="astronaut" style="height: 100px;">
                                     <div class="card-body" style="background-color:#409daf;">
                                         <p class="card-text" style="color: white;">Project 5</p>
                                     </div>
@@ -123,12 +125,12 @@
         <!--This is for the footer-->
         <div class="row">
             <div class="col-lg-12">
-                <div class="footer">
-                    <div class="footer-body" style="background-color: #666666;" style="border-top: 8px solid #4aaaa5;">
-                        <div class="text-center">
-                            Copyright &copy;
-                        </div>
+                <div class="navbar fixed-bottom  navbar-expand-sm" style="background-color: #666666;"
+                    style="border-top: 8px solid #4aaaa5;">
+                    <div class="text-center" style="color: white;">
+                        Copyright &copy;
                     </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
