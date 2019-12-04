@@ -1,0 +1,21 @@
+.content{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    background-color: lightgray !important;
+    padding-top: 20px !important;
+    width: 100% !important;
+}
+
+#display{
+    width: 100% !important;
+}
+
+#slider{
+    width: 100% !important;
+}
+
+#length{
+    display: inline-block;
+    width: 100px;
+}
+
