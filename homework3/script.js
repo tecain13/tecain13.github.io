@@ -1,7 +1,6 @@
 
 var yes = "yes"
 var no = "no"
-//var strongPassword = "" //try inserting the other ones here and see what happens..?
 var numeric = ""
 var uppercase = ""
 var lowercase = ""
@@ -24,9 +23,9 @@ var upperlower = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 var uppersymbol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var lowersymbol = "abcdefghijklmnopqrstuvwxyz!#$%&()*+,-./:;<=>?@[\]^_`{|}~"
 
-//set password length and complexity
-var complexity = document.getElementById("slider").value;
-console.log(complexity);
+
+charCount = prompt("How many characters would you like to use in your password? Please enter a number between 8 and 126.");
+
 
 //generate rando password
 function generate() {
@@ -120,7 +119,7 @@ function generate() {
 //now define all of the different functions referenced above
 function generateStrongPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
     }
     console.log(password);
@@ -128,7 +127,7 @@ function generateStrongPassword() {
 
 function numericonlyPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numbers.charAt(Math.floor(Math.random() * Math.floor(numbers.length - 1)));
     }
 
@@ -136,7 +135,7 @@ function numericonlyPassword() {
 
 function upperonlyPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + upperalpha.charAt(Math.floor(Math.random() * Math.floor(upperalpha.length - 1)));
     }
 
@@ -144,7 +143,7 @@ function upperonlyPassword() {
 
 function loweronlyPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + loweralpha.charAt(Math.floor(Math.random() * Math.floor(loweralpha.length - 1)));
     }
 
@@ -152,7 +151,7 @@ function loweronlyPassword() {
 
 function symbolonlyPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + symbols.charAt(Math.floor(Math.random() * Math.floor(symbols.length - 1)));
     }
 
@@ -161,7 +160,7 @@ function symbolonlyPassword() {
 
 function numberupperPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numberupper.charAt(Math.floor(Math.random() * Math.floor(numberupper.length - 1)));
     }
 }
@@ -169,7 +168,7 @@ function numberupperPassword() {
 
 function numberlowerPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numberlower.charAt(Math.floor(Math.random() * Math.floor(numberlower.length - 1)));
     }
 
@@ -177,7 +176,7 @@ function numberlowerPassword() {
 
 function numbersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numbersymbol.charAt(Math.floor(Math.random() * Math.floor(numbersymbol.length - 1)));
     }
 
@@ -185,7 +184,7 @@ function numbersymbolPassword() {
 
 function numberuppersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numberuppersymbol.charAt(Math.floor(Math.random() * Math.floor(numberuppersymbol.length - 1)));
     }
 
@@ -193,14 +192,14 @@ function numberuppersymbolPassword() {
 
 function numberupperlowerPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numberupperlower.charAt(Math.floor(Math.random() * Math.floor(numberupperlower.length - 1)));
     }
 }
 
 function numberlowersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + numberlowersymbol.charAt(Math.floor(Math.random() * Math.floor(numberlowersymbol.length - 1)));
     }
 
@@ -208,7 +207,7 @@ function numberlowersymbolPassword() {
 
 function upperlowersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + upperlowersymbol.charAt(Math.floor(Math.random() * Math.floor(upperlowersymbol.length - 1)));
     }
 
@@ -216,7 +215,7 @@ function upperlowersymbolPassword() {
 
 function upperlowersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + upperlowersymbol.charAt(Math.floor(Math.random() * Math.floor(upperlowersymbol.length - 1)));
     }
 
@@ -224,7 +223,7 @@ function upperlowersymbolPassword() {
 
 function upperlowerPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + upperlower.charAt(Math.floor(Math.random() * Math.floor(upperlower.length - 1)));
     }
 
@@ -232,7 +231,7 @@ function upperlowerPassword() {
 
 function uppersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + uppersymbol.charAt(Math.floor(Math.random() * Math.floor(uppersymbol.length - 1)));
     }
 
@@ -240,7 +239,7 @@ function uppersymbolPassword() {
 
 function lowersymbolPassword() {
     password = ""
-    for (var i = 0; i <= complexity; i++) {
+    for (var i = 0; i <= charCount; i++) {
         password = password + lowersymbol.charAt(Math.floor(Math.random() * Math.floor(lowersymbol.length - 1)));
     }
 
@@ -250,19 +249,6 @@ function lowersymbolPassword() {
 generate()
 
 
-//set default length of 20
-//document.getElementById("length").innerHTML = "Length: 20";
-
-//function to set length based on slider position
-document.getElementById("slider").oninput = function () {
-    if (document.getElementById("slider").value > 0) {
-        document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
-    }
-    else {
-        document.getElementById("length").innerHTML = "Length: 8";
-    }
-}
-
 //function to copy to clipboard
 function copyPassword() {
     document.getElementById("display").select();
@@ -271,4 +257,3 @@ function copyPassword() {
 
     alert("Password copied to clipboard.");
 }
-
