@@ -56,9 +56,6 @@ var questions = [
 var lastQuestion = questions.length - 1;
 var runningQuestion = 0;
 var count = 0;
-var questionTime = 15; // 15seconds
-var gaugeWidth = 150; // 150px wide
-var gaugeUnit = gaugeWidth / questionTime;
 var TIMER;
 var score = 0;
 
@@ -103,12 +100,12 @@ function overallTimer() {
     document.getElementById('overalltime').innerHTML = seconds + "sec left";
     seconds--;
     if (seconds == -1) {
-        clearInterval(TIMER);
+        clearInterval(overallTimer);
         scoreRender();
     }
 }
 
-//need to figure out how to prevent it from going negative, and how to introduce a penalty if question if wrong
+//need to figure out how to prevent it from going negative, and how to introduce a penalty if question is wrong
 
 // checkAnwer
 
