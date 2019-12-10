@@ -10,6 +10,9 @@ var choiceD = document.getElementById("D");
 var counter = document.getElementById("counter");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
+var highscorebar = document.getElementById("scorebutton");
+var highscores = [];
+var highscorepage = document.getElementById("highscoreContainer");
 
 // create our questions
 var questions = [
@@ -56,9 +59,8 @@ var questions = [
 var lastQuestion = questions.length - 1;
 var runningQuestion = 0;
 var count = 0;
-var TIMER;
 var score = 0;
-
+var finalscore = 0;
 
 // render a question
 function renderQuestion() {
@@ -79,9 +81,9 @@ function startQuiz() {
     renderQuestion();
     quiz.style.display = "block";
     renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+    overalltime = setInterval(overallTimer, 1000);
 }
+
 
 // render progress
 function renderProgress() {
@@ -93,14 +95,14 @@ function renderProgress() {
 
 
 //overall quiz timer
-var seconds = 80;
-var overalltime = setInterval(overallTimer, 1000);
+var seconds = 75;
+var overalltime;
 
 function overallTimer() {
-    document.getElementById('overalltime').innerHTML = seconds + "sec left";
     seconds--;
-    if (seconds == -1) {
-        clearInterval(overallTimer);
+    document.getElementById('overalltime').innerHTML = seconds + "sec left";
+    if (seconds === 0) {
+        clearInterval(overalltime);
         scoreRender();
     }
 }
@@ -126,7 +128,7 @@ function checkAnswer(answer) {
         renderQuestion();
     } else {
         // end the quiz and show the score
-        clearInterval(TIMER);
+        clearInterval(overalltime);
         scoreRender();
     }
 }
@@ -136,18 +138,35 @@ function answerIsCorrect() {
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
+
 // answer is Wrong
 function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
 
+
 // score render
 function scoreRender() {
     scoreDiv.style.display = "block";
-
-
+    finalscore = (score * seconds);
+    highscores.push(finalscore);
     // calculate the amount of question percent answered by the user
-    var scorePerCent = Math.round(100 * score / questions.length);
 
-    scoreDiv.innerHTML += "<p>" + scorePerCent + "%</p>";
+    scoreDiv.innerHTML += "<p>" + finalscore + "</p>";
+
 }
+
+//score button
+scorebutton.addEventListener("click", highscore);
+
+function highscore() {
+    for (var i = 0; i < highscores.length; i++) {
+        console.log(highscores[i]);
+        highscoreDiv.innerHTML += "<p>" + highscores[i] + "</p>";
+
+    }
+}
+
+//add a pop-up box and individual p tag for high score
+//p tag inside the for loop/
+//high score div inner.html 
