@@ -1,12 +1,11 @@
-// select all elements
-var start = document.getElementById("start");
+// select necessary elements
+var begin = document.getElementById("begin");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var qImg = document.getElementById("qImg");
-var choiceA = document.getElementById("A");
-var choiceB = document.getElementById("B");
-var choiceC = document.getElementById("C");
-var choiceD = document.getElementById("D");
+var questionImg = document.getElementById("questionImg");
+var optionA = document.getElementById("A");
+var optionB = document.getElementById("B");
+var optionC = document.getElementById("C");
 var counter = document.getElementById("counter");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
@@ -14,79 +13,79 @@ var highscorebar = document.getElementById("scorebutton");
 var highscores = [];
 var highscorepage = document.getElementById("highscoreContainer");
 
-// create our questions
+// create questions
 var questions = [
     {
         question: "Commonly used data types DO NOT include:",
         imgSrc: "img/datatype.jpg",
-        choiceA: "Alerts",
-        choiceB: "Numbers",
-        choiceC: "Booleans",
+        optionA: "Alerts",
+        optionB: "Numbers",
+        optionC: "Booleans",
         correct: "A"
     }, {
         question: "The condition in an if / else statement is enclosed within ____.",
         imgSrc: "img/brackets.jpg",
-        choiceA: "Quotes",
-        choiceB: "Parentheses",
-        choiceC: "Curly Brackets",
+        optionA: "Quotes",
+        optionB: "Parentheses",
+        optionC: "Curly Brackets",
         correct: "B"
     }, {
         question: "JQuery was originally called what?",
         imgSrc: "img/jquery.png",
-        choiceA: "Javascript",
-        choiceB: "Querytime",
-        choiceC: "JSelect",
+        optionA: "Javascript",
+        optionB: "Querytime",
+        optionC: "JSelect",
         correct: "C"
     }, {
         question: "Who is credited as the creator of Javascript?",
         imgSrc: "img/js.png",
-        choiceA: "Bill Gates",
-        choiceB: "Steve Wozniak",
-        choiceC: "Brendan Eich",
+        optionA: "Bill Gates",
+        optionB: "Steve Wozniak",
+        optionC: "Brendan Eich",
         correct: "C"
     },
     {
-        question: "There is an estimated ___ coding languages in existence.",
+        question: "There are ____ different coding languages estimated to be in existence.",
         imgSrc: "img/curly.png",
-        choiceA: "700",
-        choiceB: "900",
-        choiceC: "300",
+        optionA: "700",
+        optionB: "900",
+        optionC: "300",
         correct: "A"
     }
 ];
 
 // create some variables
 var lastQuestion = questions.length - 1;
-var runningQuestion = 0;
+var currentQuestion = 0;
 var count = 0;
 var score = 0;
 var finalscore = 0;
 
-// render a question
-function renderQuestion() {
-    let q = questions[runningQuestion];
+// display a question
+function displayQuestion() {
+    let q = questions[currentQuestion];
 
     question.innerHTML = "<p>" + q.question + "</p>";
-    qImg.innerHTML = "<img src=" + q.imgSrc + ">";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    questionImg.innerHTML = "<img src=" + q.imgSrc + ">";
+    optionA.innerHTML = q.optionA;
+    optionB.innerHTML = q.optionB;
+    optionC.innerHTML = q.optionC;
 }
 
-start.addEventListener("click", startQuiz);
+begin.addEventListener("click", beginQuiz);
 
-// start quiz
-function startQuiz() {
-    start.style.display = "none";
-    renderQuestion();
+// begin quiz
+function beginQuiz() {
+    begin.style.display = "none";
+    displayQuestion();
     quiz.style.display = "block";
-    renderProgress();
+    displayProgress();
     overalltime = setInterval(overallTimer, 1000);
 }
 
 
-// render progress
-function renderProgress() {
+// display progress
+function displayProgress() {
     for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
         progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
     }
@@ -95,7 +94,7 @@ function renderProgress() {
 
 
 //overall quiz timer
-var seconds = 75;
+var seconds = 76;
 var overalltime;
 
 function overallTimer() {
@@ -103,16 +102,18 @@ function overallTimer() {
     document.getElementById('overalltime').innerHTML = seconds + "sec left";
     if (seconds === 0) {
         clearInterval(overalltime);
-        scoreRender();
-    }
+        calcScore();
+    } //else if (answerIsWrong());
+    //overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+
 }
 
-//need to figure out how to prevent it from going negative, and how to introduce a penalty if question is wrong
 
-// checkAnwer
+//need to figure out how to introduce a penalty if question is wrong
 
+// check Anwer
 function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
+    if (answer == questions[currentQuestion].correct) {
         // answer is correct
         score++;
         // change progress color to green
@@ -121,51 +122,63 @@ function checkAnswer(answer) {
         // answer is wrong
         // change progress color to red
         answerIsWrong();
+        overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+
     }
     count = 0;
-    if (runningQuestion < lastQuestion) {
-        runningQuestion++;
-        renderQuestion();
+    if (currentQuestion < lastQuestion) {
+        currentQuestion++;
+        displayQuestion();
     } else {
         // end the quiz and show the score
         clearInterval(overalltime);
-        scoreRender();
+        calcScore();
     }
 }
 
-// answer is correct
+// if the answer is correct
 function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+    document.getElementById(currentQuestion).style.backgroundColor = "#0f0";
 }
 
 
-// answer is Wrong
+// if the answer is Wrong
 function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    document.getElementById(currentQuestion).style.backgroundColor = "#f00";
+    //overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
 }
 
 
-// score render
-function scoreRender() {
+// calculate final score
+function calcScore() {
     scoreDiv.style.display = "block";
     finalscore = (score * seconds);
     highscores.push(finalscore);
-    // calculate the amount of question percent answered by the user
+    // calculate the amount of questions answered corrected and time remaining being a factor
 
-    scoreDiv.innerHTML += "<p>" + finalscore + "</p>";
+    scoreDiv.innerHTML += "<p>" + "Your score is" + " " + finalscore + "</p>";
 
 }
 
-//score button
+//high scores button
 scorebutton.addEventListener("click", highscore);
 
 function highscore() {
     for (var i = 0; i < highscores.length; i++) {
         console.log(highscores[i]);
-        highscoreDiv.innerHTML += "<p>" + highscores[i] + "</p>";
+        var highscoreContainer = document.getElementById("highscoreContainer");
+
+        highscoreContainer.innerHTML = highscores[i];
+
+        //highscoreContainer.innerHTML += "<p>" + highscores[i] + "</p>";
 
     }
 }
+
+//review previous high scores
+highscorebar.addEventListener("click", highscore);
+
+localStorage.setItem("highscore", highscore);
 
 //add a pop-up box and individual p tag for high score
 //p tag inside the for loop/
