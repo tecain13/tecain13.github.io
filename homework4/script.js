@@ -6,7 +6,6 @@ var questionImg = document.getElementById("questionImg");
 var optionA = document.getElementById("A");
 var optionB = document.getElementById("B");
 var optionC = document.getElementById("C");
-var counter = document.getElementById("counter");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
 var highscorebar = document.getElementById("scorebutton");
@@ -57,22 +56,21 @@ var questions = [
 // create some variables
 var lastQuestion = questions.length - 1;
 var currentQuestion = 0;
-var count = 0;
 var score = 0;
 var finalscore = 0;
+
+
+begin.addEventListener("click", beginQuiz);
 
 // display a question
 function displayQuestion() {
     let q = questions[currentQuestion];
-
     question.innerHTML = "<p>" + q.question + "</p>";
     questionImg.innerHTML = "<img src=" + q.imgSrc + ">";
     optionA.innerHTML = q.optionA;
     optionB.innerHTML = q.optionB;
     optionC.innerHTML = q.optionC;
 }
-
-begin.addEventListener("click", beginQuiz);
 
 // begin quiz
 function beginQuiz() {
@@ -82,16 +80,6 @@ function beginQuiz() {
     displayProgress();
     overalltime = setInterval(overallTimer, 1000);
 }
-
-
-// display progress
-function displayProgress() {
-    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-        progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
-    }
-}
-
-
 
 //overall quiz timer
 var seconds = 76;
@@ -103,49 +91,60 @@ function overallTimer() {
     if (seconds === 0) {
         clearInterval(overalltime);
         calcScore();
-    } //else if (answerIsWrong());
-    //overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+    }
 
-}
+};
 
 
-//need to figure out how to introduce a penalty if question is wrong
-
-// check Anwer
+// check Answer
 function checkAnswer(answer) {
     if (answer == questions[currentQuestion].correct) {
         // answer is correct
         score++;
         // change progress color to green
-        answerIsCorrect();
+        CorrectAnswer();
     } else {
         // answer is wrong
         // change progress color to red
-        answerIsWrong();
+        WrongAnswer();
         overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+        // function timepenalty() {
+        //     if (WrongAnswer()) {
+        //         seconds - 10;
+        //         document.getElementById('overalltime').innerHTML = seconds + "sec left";
+        //     }
+        // }
 
     }
-    count = 0;
+
     if (currentQuestion < lastQuestion) {
         currentQuestion++;
         displayQuestion();
     } else {
-        // end the quiz and show the score
+        // end quiz and show the score
         clearInterval(overalltime);
         calcScore();
     }
 }
 
+
 // if the answer is correct
-function answerIsCorrect() {
+function CorrectAnswer() {
     document.getElementById(currentQuestion).style.backgroundColor = "#0f0";
 }
 
 
 // if the answer is Wrong
-function answerIsWrong() {
+function WrongAnswer() {
     document.getElementById(currentQuestion).style.backgroundColor = "#f00";
-    //overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+}
+
+
+// display progress
+function displayProgress() {
+    for (let questionSeries = 0; questionSeries <= lastQuestion; questionSeries++) {
+        progress.innerHTML += "<div class='prog' id=" + questionSeries + "></div>";
+    }
 }
 
 
@@ -154,13 +153,16 @@ function calcScore() {
     scoreDiv.style.display = "block";
     finalscore = (score * seconds);
     highscores.push(finalscore);
-    // calculate the amount of questions answered corrected and time remaining being a factor
+    //calculate the amount of questions answered correctly and time remaining being a factor
 
     scoreDiv.innerHTML += "<p>" + "Your score is" + " " + finalscore + "</p>";
 
 }
 
+
+
 //high scores button
+//NOTE TO TA'S: I COULD ONLY GET THIS TO WORK IMMEDIATELY AFTER TAKING THE QUIZ AND GETTING A SCORE
 scorebutton.addEventListener("click", highscore);
 
 function highscore() {
@@ -173,13 +175,18 @@ function highscore() {
         //highscoreContainer.innerHTML += "<p>" + highscores[i] + "</p>";
 
     }
+
+    return (localStorage.setItem("highscore", highscore))
 }
 
-//review previous high scores
-highscorebar.addEventListener("click", highscore);
 
-localStorage.setItem("highscore", highscore);
+// //figure out how to save with high score user's initials
 
-//add a pop-up box and individual p tag for high score
-//p tag inside the for loop/
-//high score div inner.html 
+// // review previous high scores
+// highscorebar.addEventListener("click", highscore);
+// localStorage.setItem("highscore", highscore);
+
+// var storedinitials = document.getElementById("initials");
+// localStorage.setItem("initials", storedinitials);
+
+

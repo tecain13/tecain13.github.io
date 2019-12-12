@@ -33,18 +33,27 @@
                 <div class="option" id="B" onclick="checkAnswer('B')"></div>
                 <div class="option" id="C" onclick="checkAnswer('C')"></div>
             </div>
-            <div id="timer">
-                <div id="counter"></div>
-            </div>
+            <div id="timer"></div>
             <div id="progress"></div>
         </div>
-        <div id="scoreContainer" style="display:none"></div>
-        <div id="highscoreContainer"></div>
     </div>
+
+
+    <div id="scoreContainer" style="display:none">
+        <form>
+            <input name="initials" type="initials" id="initials" required="" placeholder="User Initials" />
+            <button id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <div id="highscoreContainer">
+    </div>
+
+    <!--JavaScript-->
     <script src="script.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
