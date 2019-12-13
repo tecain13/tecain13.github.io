@@ -92,6 +92,7 @@ function overallTimer() {
         clearInterval(overalltime);
         calcScore();
     }
+    // } else WrongAnswer();
 
 };
 
@@ -107,7 +108,9 @@ function checkAnswer(answer) {
         // answer is wrong
         // change progress color to red
         WrongAnswer();
-        overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
+
+
+
         // function timepenalty() {
         //     if (WrongAnswer()) {
         //         seconds - 10;
@@ -137,6 +140,7 @@ function CorrectAnswer() {
 // if the answer is Wrong
 function WrongAnswer() {
     document.getElementById(currentQuestion).style.backgroundColor = "#f00";
+    overallTimer = document.getElementById('overalltime').innerHTML = seconds - 10;
 }
 
 
@@ -162,8 +166,8 @@ function calcScore() {
 
 
 //high scores button
-//NOTE TO TA'S: I COULD ONLY GET THIS TO WORK IMMEDIATELY AFTER TAKING THE QUIZ AND GETTING A SCORE
-scorebutton.addEventListener("click", highscore);
+//NOTE TO TA'S: I COULD ONLY GET THIS TO WORK IMMEDIATELY AFTER TAKING THE QUIZ AND GETTING A SCORE and BEFORE pressing submit on the initials form
+//(e.g.: your score is 172, immediately press high score button, THEN enter and submit initials in order to get it to return anything)
 
 function highscore() {
     for (var i = 0; i < highscores.length; i++) {
@@ -180,6 +184,27 @@ function highscore() {
 }
 
 
+
+
+//other experimental thoughts for high score local storage
+
+// scorebutton.addEventListener("click", highscore);
+// var myMap = new Map();
+// var userScore;
+// var keyString = document.getElementById("inputInitials.value")
+// keyFunc = function () { };
+
+// myMap.set(keyString, finalscore);
+
+// for (var [key, value] of myMap.keys()) {
+//     console.log(key);
+//     if (key === keyString) {
+//         userScore = value;
+//     };
+
+
+
+
 // //figure out how to save with high score user's initials
 
 // // review previous high scores
@@ -188,5 +213,3 @@ function highscore() {
 
 // var storedinitials = document.getElementById("initials");
 // localStorage.setItem("initials", storedinitials);
-
-
