@@ -4,18 +4,58 @@ var futurehour // turn green
 var time;
 
 
-//save function w/ local storage retention
 
-//recognize current time
+$(document).ready(function () {
 
-//compare current time to other functions
+    //save function w/ local storage retention
 
-//project future hours green
-//if time > current hour, turn green?
+    $(".saveBtn").on("click", function () {
 
-//project current hour red
-//if time = current hour, turn red
+        var value = $(this).siblings(".description").val();
 
-//project previous hours grey
-//if pasthour < current houe, turn grey
+        var time = $(this).parent().attr("id");
+
+        localStorage.setItem(time, value);
+    })
+    //change time blocks for each, mirror syntax
+
+    $("#hour-10 .desciption").val(localStorage.getItem("hour-10"));
+
+    //recognize current time
+    function updatehour() {
+        var currenthour = moment().hours()
+        $(".time-block").each(function () {
+            var blockhour = parseInt($(this).attr("id").split("-")[1]);
+            if (blockhour < currenthour) {
+                $(this).addClass("past")
+            } else if (blockhour === currenthour) {
+                $(this).removeClass("past")
+                $(this).addClass("present")
+            } else {
+                $(this).removeClass("past")
+                $(this).removeClass("present")
+                $(this).addClass("future")
+            }
+        })
+
+    }
+
+    updatehour();
+
+    //compare current time to other functions
+
+    //project future hours green
+    //if time > current hour, turn green?
+
+    //project current hour red
+    //if time = current hour, turn red
+
+    //project previous hours grey
+    //if pasthour < current hour, turn grey
+
+
+
+});
+
+
 
